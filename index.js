@@ -1,3 +1,5 @@
+'use strict'
+
 const path = require('path');
 const express = require('express');
 const exphbr = require('express-handlebars');
@@ -5,6 +7,9 @@ const exphbr = require('express-handlebars');
 const app = express();
 const port = 8000;
 
+
+// this loads the default layout for the server
+// .engine defines which view layout are we using
 app.engine('.hbs', exphbr({
 	defaultlayout: 'main',
 	extname: '.hbs',
@@ -25,4 +30,6 @@ app.get('/', (request, response) => {
 })
 
 
+
+// run the server after all the routes are loaded
 app.listen(port);

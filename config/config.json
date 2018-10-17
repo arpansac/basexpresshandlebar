@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "lnode_dev",
+    "password": "lnode_dev",
+    "database": "lnode_dev",
+    "host": "localhost",
+    "dialect": "postgres"
+  }
+}

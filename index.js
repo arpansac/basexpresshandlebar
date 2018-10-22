@@ -34,29 +34,28 @@ app.get('/', (request, response) => {
   String(parseInt(Math.random(1, 100) * 100));
 
   	// create a user on page load
-	User.create({name: "Arpan", email: "arpansac@gmail.com"}).then(user => {
-		console.log(user);
-	}).catch(error => {
-		console.log(error);
-	});
+	// User.create({name: "Arpan", email: "arpanarpan2002@gmail.com"}).then(user => {
+	// 	console.log(user);
+	// }).catch(error => {
+	// 	console.log(error);
+	// });
 
 
-	// get all the users on page loading
-	let allUsers = User.all().then(users => {
+	// get all the users on page loading, this returns a promise, so we 
+	let allUsers = User.all();
 
-		return users; 
-	}).catch(error => {
-		throw 500;
-	});
-
-
-
-
+	// we need to call all the promises and when they all complete then we render the view
+	Promise.all([allUsers]).then(data => {
+	
+		console.log(data[0][0][0]);
 	// allUsers is still blank here because User.all returns a Promise which runs async
-	response.render('home', {
-		users: allUsers
-	})
+		return response.render('home', {
+			users: data[0][0]
+		})
 
+	});
+
+	
   
 })
 

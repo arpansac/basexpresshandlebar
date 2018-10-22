@@ -15,3 +15,6 @@
 - Run Migration
 -- node_modules/.bin/sequelize db:migrate
 
+
+- Using the database
+-- Similar to what nodejs does, one of the things is that all the operations return promises

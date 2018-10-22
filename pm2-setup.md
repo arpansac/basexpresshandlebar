@@ -1,0 +1,2 @@
+- npm install pm2@latest -g
+-- pm2-dev start my-app.js

@@ -1,2 +1,2 @@
 - npm install pm2@latest -g
--- pm2-dev start my-app.js
+-- pm2-dev start index.js OR pm2-dev index.js

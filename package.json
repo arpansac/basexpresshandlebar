@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "pm2-dev index.js"
   },
   "author": "author",
   "license": "ISC",
@@ -14,6 +14,8 @@
     "express-handlebars": "^3.0.0",
     "pg": "^7.5.0",
     "pg-hstore": "^2.3.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2",
     "sequelize": "^4.39.1",
     "sequelize-cli": "^5.1.0"
   }

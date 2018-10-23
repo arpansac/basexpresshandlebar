@@ -14,6 +14,9 @@ const exphbr = require('express-handlebars');
 const app = express();
 const port = 8000;
 
+const request = require('request-promise');
+
+
 
 // this loads the default layout for the server
 // .engine defines which view layout are we using
@@ -57,7 +60,32 @@ app.get('/', (request, response) => {
 
 	
   
-})
+});
+
+
+
+function ApiRequestHandler(){
+
+	const options = {
+	  method: 'GET',
+	  uri: 'https://risingstack.com'
+	}
+
+
+
+	request(options).then(response => {
+		console.log(response);
+	}).catch(error => {
+		console.log(error);
+	});
+
+}
+
+
+ApiRequestHandler();
+
+
+
 
 
 
